@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Just Dessert</title>
+</head>
+<body>
+    <!-- Nav -->
+    <nav>
+        <h1>Just<span class="changeheadercolor">Dessert</span></h1>
+        <button class="join" onclick="this.remove()">Join</button>
+        <button class="log">Login</button>
+
+    </nav>
+    <div class="searchbox">
+        <div class="search">
+            <input onclick="alert('You are searching for tiramisu')" type="text" name="search-site" value="search">
+            <button class="go-btn">GO</button>
+        </div>
+        <div class="edibles">
+            <div class="cake">
+                <img src="cake.png" alt="Cake image">
+                <span>Cakes</span>
+            </div>
+            <div class="cake">
+                <img src="ice-cream.png" alt="Ice Cream image">
+                <span>Ice Cream</span>
+            </div>
+            <div class="cake">
+                <img src="cookie.png" alt="cookie image">
+                <span>Cookies</span>
+            </div>
+            <div class="cake">
+                <img src="pie.png" alt="Pie image">
+                <span>Pies</span>
+            </div>
+        </div>
+        
+    </div>
+    <!-- main -->
+    <main>
+        <!-- main left -->
+        <div class="main-left">
+            <h2>Recipe of the Day</h2>
+            <div>
+                <img class="orange" src="orange-tart.jpg" alt="Orange Tart image">
+            </div>
+            <div class="left-details">
+                <div>
+                    <p class="youri">Orange Tea Jelly Tart</p>
+                    <p class="youri">By:<a href="yuripiano.now">yuripiano</a></p>
+                </div>
+                <div class="hear-img">
+                    <img onclick="increment1()" src="heart.png" alt="heart image">
+                    <span id="counter1">68</span>
+                </div>
+            </div>
+            <a class="center" href="seefullrecipe.now">See Full Recipe</a>
+        </div>
+        <!-- the main right section -->
+        <div class="main-right">
+            <h4>Recommended for you:</h4>
+            <div>
+                <img class="mac" src="macarons.jpg" alt="macarons image">
+            </div>
+
+            <!-- using the same class as the left details from the left-main-->
+            <div class="left-details">
+                <div class="right-top">
+                    <div>
+                        <p class="emi">Macarons</p>
+                        <p class="emi">By:<a href="yuripiano.now">EmilieW</a></p>
+                    </div>
+                    <div class="top">
+                        <img onclick="increment2()" src="heart.png" alt="heart image">
+                        <span id="counter2">212</span>
+                    </div>
+                </div> 
+            </div>
+            <div>
+                <img class="mac" src="creme-brulee.jpg" alt="Creme-Brulee image">
+            </div>
+
+            <!-- using the same class as the left details from the left-main-->
+            <div class="left-details">
+                <div class="right-bottom">
+                    <div>
+                        <p class="emi">Creme Brulee</p>
+                        <p class="emi">By:<a href="yuripiano.now">MarisaG</a></p>
+                    </div>
+                    <div class="top">
+                        <img onclick="increment3()" src="heart.png" alt="heart image">
+                        <span id="counter3">33</span>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

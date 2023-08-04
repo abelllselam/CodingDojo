@@ -1,0 +1,331 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* utility class */
+.font {
+  font-family: cursive;
+}
+
+.nav {
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  flex: 4;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-left: 289px;
+}
+
+button {
+  color: white;
+  background-color: #0e7987;
+  border: 2px black solid;
+}
+
+.nav-right {
+  flex: 1;
+  align-items: center;
+  margin-right: 340px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 800px;
+  margin: 0 auto;
+}
+
+.main-left {
+  flex: 2;
+  margin-top: 20px;
+}
+
+.main-right {
+  flex: 2;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-1 {
+  height: 300px;
+  width: 600px;
+  border: 2px rgb(49, 48, 48) solid;
+}
+
+.left_top {
+  height: 100px;
+  width: 600px;
+  background-color: #0e7987;
+}
+
+.jane-doe {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  margin: 50px 50px 0px 50px;
+}
+
+.jane-name {
+  font-family: cursive;
+  font-weight: bold;
+  margin: 0px 0px 5px 50px;
+  font-size: 20px;
+}
+
+.location {
+  width: 10px;
+  height: 20px;
+  margin-left: 50px;
+}
+
+span {
+  font-size: large;
+  font-weight: bold;
+  font-family: cursive;
+}
+
+.discription {
+  margin-top: 120px;
+  margin-left: 50px;
+  font-weight: bold;
+  font-family: cursive;
+}
+
+.gear-img {
+  width: 20px;
+  height: 20px;
+  margin-left: 50px;
+  margin-top: 3px;
+}
+
+.edit-profile {
+  color: blue;
+  text-decoration: underline;
+}
+
+.left_bottom {
+  height: 300px;
+  width: 600px;
+  border: 2px rgb(49, 48, 48) solid;
+  margin-top: 20px;
+}
+
+.card-2 {
+  height: 50px;
+  border: 2px rgb(49, 48, 48) solid;
+  width: 600px;
+  background-color: black;
+}
+
+.edu {
+  color: white;
+  font-family: cursive;
+  margin-left: 50px;
+}
+
+.h1_line {
+  font-family: cursive;
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+.h2_line {
+  font-family: cursive;
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+.h3_line {
+  font-family: cursive;
+  margin-left: 50px;
+  color: lightslategray;
+  margin-bottom: 20px;
+}
+
+.right_top {
+  height: 200px;
+  width: 400px;
+  border: 2px rgb(49, 48, 48) solid;
+  margin: 20px;
+  flex: 1;
+}
+
+.card-3 {
+  height: 50px;
+  border: 2px green solid;
+  width: 400px;
+  background-color: black;
+}
+
+.card3_title {
+  color: white;
+  margin-left: 50px;
+  font-family: cursive;
+}
+
+.req {
+  background-color: gray;
+  border: 2px rgb(49, 48, 48) solid;
+  width: 20px;
+  height: 20px;
+  color: white;
+  font-size: 30px;
+  border-radius: 50%;
+}
+
+.todd {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.phil {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.todd-image {
+  width: 30px;
+  height: 30px;
+  margin: 15px;
+  border-radius: 50%;
+}
+
+.phil-image {
+  width: 30px;
+  height: 30px;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+.accept {
+  width: 20px;
+  height: 20px;
+  padding-left: 100px;
+}
+
+.close {
+  width: 20px;
+  height: 20px;
+  padding-left: 10px;
+}
+
+.right_bottom {
+  height: 0px;
+  width: 410px;
+  border: 2px green solid;
+  margin: 20px 20px 200px 20px;
+  flex: 2;
+}
+
+.card-4 {
+  height: 50px;
+  border: 2px gray solid;
+  width: 410px;
+  background-color: black;
+}
+
+.card4_title {
+  color: white;
+  margin-left: 50px;
+  font-family: cursive;
+}
+
+.adrien {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.anne {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.adrien-image {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.anne-image {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.alayne {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.alayne-image {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.arry {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.arry-image {
+  width: 30px;
+  height: 30px;
+  margin: 10px 10px 0px 10px;
+  border-radius: 50%;
+}
+
+.five-connections {
+  height: ;
+}
+
+.card-5 {
+  border: 2px gray solid;
+  width: 395px;
+  height: 30px;
+  padding: 0px 15px 0px 0px;
+  margin-bottom: 0px;
+  margin-top: 50px;
+}
+
+.view {
+  margin-bottom: px;
+  color: blue;
+  text-decoration: underline;
+  padding-left: 50px;
+}

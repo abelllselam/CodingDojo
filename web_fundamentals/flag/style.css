@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 1px red dotted;
+  
+  
+}
+.france {
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+.blue {
+  padding: 100px;
+  background-color: blue;
+  display: inline-block;
+}
+.white {
+  padding: 100px;
+  background-color: white;
+  display: inline-block;
+}
+
+.red {
+  padding: 100px;
+  background-color: red;
+  display: inline-block;
+}

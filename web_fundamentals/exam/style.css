@@ -1,0 +1,179 @@
+/* wild card */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+/* fixing the width of the exam */
+body {
+    width: 1000px;
+    font-family: cursive;
+    border: 2px solid black;
+}
+/* Nav CSS */
+nav {
+    min-height: 50px;
+    margin: 0 auto;
+    width: 70%;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+.changeheadercolor {
+    color: yellow;
+}
+
+.join {
+    background-color: yellow;
+    color: black;
+    padding: 5px 30px;
+    margin-left: 200px;
+    max-height: 30px;
+    box-shadow: 5px 10px black;
+
+}
+
+.log {
+    background-color: blue;
+    color: white;
+    padding: 5px 30px;
+    max-height: 30px;
+    box-shadow: 5px 10px black;
+    
+}
+
+/* Search box */
+.searchbox {
+    min-height: 50px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 70%;
+    color: white;
+    background-color: bisque;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 100px;
+
+}
+
+.edibles {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 40px;
+    color: black;
+}
+
+.cake {
+    display: flex;
+    flex-direction: column;
+}
+
+.search {
+    margin-left: 30px;
+}
+
+img {
+    height: 40px;
+    width: 40px;
+    
+}
+
+.go-btn {
+    background-color: blue;
+    color: white;
+}
+
+/* main CSS */
+main {
+    min-height: 50px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 70%;
+    display: flex;
+}
+
+/* left side of main */
+h2 {
+    color: blue;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-left {
+    background-color:rgb(225, 223, 223);
+    min-height: 50px;
+    margin-bottom: 20px;
+    width: 70%;
+}
+
+.orange {
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    margin: 0 40px;
+}
+
+.youri {
+    margin-left: 40px;
+}
+.center {
+    margin-left: 200px;
+    margin-bottom: 50px;
+}
+
+.left-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.hear-img {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+/* main right section CSS*/
+.main-right {
+    background-color: white;
+    margin-left: 5px;
+}
+/* the right top image */
+.right-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h4 {
+    text-decoration: underline;
+    margin-top: 40px;
+}
+
+.mac {
+    height: 150px;
+    width: 200px;
+}
+
+.top {
+    margin-left: 20px;
+    align-items: center;
+}
+
+/* right bottom image */
+.right-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+

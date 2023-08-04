@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 90%;
+    margin: 100px;
+    background-color: white;
+    border: 1px dotted black;
+}
+
+a {
+    color: aqua;
+}
+
+p {
+    font-family: cursive;
+    text-align: center;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 100px;
+    margin-bottom: 50px;
+}
+
+.first-box {
+    height: 250px;
+    width: 85%;
+    background-color: rgb(142, 167, 142);
+    margin: 50px 150px;
+    display: flex;
+    align-items:  center;
+    justify-content: space-around;
+}
+.second-box {
+    height: 250px;
+    width: 85%;
+    background-color: rgb(123, 137, 141);
+    margin: 50px 150px;
+    display: flex;
+    align-items:  center;
+    justify-content: space-around;
+}
+.third-box {
+    height: 250px;
+    width: 85%;
+    background-color: gainsboro;
+    margin: 50px 150px 100px;
+    display: flex;
+    align-items:  center;
+    justify-content: space-around;
+}

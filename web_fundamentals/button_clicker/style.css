@@ -1,0 +1,112 @@
+/* c */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  width: 1500px;
+  font-family: cursive;
+}
+
+/* Nav CSS */
+nav {
+  min-height: 40px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 70%;
+  background-color: rgb(194, 191, 191);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn-nav {
+    background-color: blue;
+    color: white;
+}
+
+input {
+    border: 2px solid black;
+}
+
+h1 {
+  justify-content: start;
+}
+
+nav input {
+  padding: 10px 90px;
+  margin:10px 0px;
+}
+
+nav button {
+  padding: 5px 40px;
+  margin:10px 0px;
+}
+
+/* This is the main CSS */
+main {
+  min-height: 40px;
+  margin: 0 auto;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+.topleft {
+  border: 3px solid black;
+  width: 400px;
+  /* margin-right: 1000px; */
+  padding-right: 20px;
+  margin-bottom: 20px;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-color-nav {
+    background-color: yellow;
+}
+
+.move-left {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.para-center {
+    margin-top: 50px;
+}
+
+.color-underline {
+  color: blue;
+  text-decoration: underline;
+}
+
+/* Thi si the left bottom box CSS */
+.leftbottom {
+  border: 3px solid black;
+  /* margin-right: 1000px; */
+  width: 400px;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.main-right {
+  border: 3px solid black;
+  height: 200px;
+  width: 300px;
+  /* margin-right: 400px; */
+}
+.main-right h2 {
+  margin-right: 50px;
+  margin-top: 40px;
+}
+
+.btn-bottom {
+  padding: 5px 10px;
+  background-color: green;
+  margin-left: 100px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}

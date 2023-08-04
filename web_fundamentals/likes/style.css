@@ -1,0 +1,148 @@
+/* wild card reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* adjusting the width of the body and other general styles */
+body {
+    width: 1000px;
+    min-height: 200px;
+    font-family: cursive;
+}
+
+/* setting up the nav and the centering it */
+nav {
+    border: 2px solid black;
+    min-height: 50px;
+    width: 70%;
+    margin:0 auto;
+    background-color: black;
+    color: white;
+    padding-left: 30px;
+}
+
+/* centering the h2 element which is the "Your feed" title */
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* The main of the page: where the flex will be set */
+main {
+    min-height: 100px;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    
+    
+}
+
+/* The only box on the left */
+.left {
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+    padding-left: 50px;
+    align-items: center;
+    
+
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.username {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    
+}
+/* The first box on the right */
+.firstbox {
+    border: 3px solid black;
+    min-height: 200px;
+    width: 400px;
+    padding-top: 20px;
+    margin-left: 100px;
+    
+}
+
+.top {
+    display: flex;
+    justify-content: space-evenly;
+    align-items:flex-start;
+}
+
+.parafix {
+    margin: 40px;
+    text-align: center;
+}
+
+span {
+    display: block;
+    /* margin-top: 10px; */
+    
+}
+
+button {
+    padding: 5px 20px;
+    background-color: yellow;
+    box-shadow:5px 10px;
+
+}
+
+/* The second (middle) box on the right */
+
+.secondbox {
+    border: 3px solid black;
+    min-height: 200px;
+    width: 400px;
+    padding-top: 20px;
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.middle {
+    display: flex;
+    justify-content: space-evenly;
+    align-items:flex;    
+}
+
+/* The third (bottom) box on the right */
+
+.thirdbox {
+    border: 3px solid black;
+    min-height: 200px;
+    width: 400px;
+    padding-top: 20px;
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-evenly;
+    align-items:flex; 
+}
+
+/* .line {
+    display: inline-block
+} */
+
+
+
+
+

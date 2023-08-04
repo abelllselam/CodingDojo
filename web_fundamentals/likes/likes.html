@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Likes</title>
+</head>
+<body>
+    <!-- Nav section -->
+    <nav>
+        <h1>Network</h1>
+    </nav>
+        <!-- The page title: set here to avoid complicating the main divs -->
+        <h2>Your Feed</h2>
+
+        <!-- The main where all the divs that are on the right and left are written -->
+    <main>
+
+        <!-- the left side div -->
+        <div class="left">
+            <img src="user-circle.png" alt="user circle image">
+            <a href="addanavata.it">Add an avatar</a>
+            <p class="username">James Doe</p>
+        </div>
+        <div class="right">
+            <div class="firstbox">
+                <div class="top">
+                    <p>Neil M</p> 
+                    <p><span id="counter1">9</span>like(s)</p>
+                    <button onclick="increment1()">like</button>
+                </div>
+                <p class="parafix">I just set up this new discord bot, let me know what you all think. <a href="link.it">link</a></p>
+            </div>
+            
+            <div class="secondbox">
+                <div class="middle">
+                    <p>Nichole K</p> 
+                    <p><span id="counter2">12</span>like(s)</p>
+                    <button onclick="increment2()">like</button>
+                </div>
+                <p class="parafix">Just finished my <a href="nextcomic.now">next comic</a> check it out</p>
+
+            </div>
+            <div class="thirdbox">
+                <div class="bottom">
+                    <p>Jim R</p> 
+                    <p><span id="counter3">9</span> like(s)</p>
+                    <button onclick="increment3()">like</button>
+                </div>
+                <p class="parafix">I cant stop listening to the <a href="nextcomic.now">new album.</a> Who else is liking it?</p>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
