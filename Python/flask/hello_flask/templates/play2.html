@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play ground_2</title>
+    <style>
+      body {
+        border: 2px solid black;
+        box-sizing: border-box;
+        width: 1000px;
+        min-height: 600px;
+      }
+      h1 {
+        text-align: center;
+      }
+      .box_container {
+        display: flex;
+        margin: 0, auto;
+      }
+      .boxs {
+        border: 2px solid black;
+        width: 300px;
+        height: 200px;
+        background-color: blue;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Welcome!</h1>
+    <div class="box_container">
+      {%for i in range(num):%}
+      <div class="boxs"></div>
+      {%endfor%}
+    </div>
+  </body>
+</html>

@@ -1,58 +1,34 @@
-// 
+//
 
-// 08/04/2023
-/* 
-  String: Is Palindrome
+// // 08/07/2023
+// /*
+//   Given an array of strings
+//   return the number of times each string occurs (a frequency / hash table)
+// */
 
-  Create a function that returns a boolean whether the string is a strict palindrome. 
-    - palindrome = string that is same forwards and backwards
-  
-  Do not ignore spaces, punctuation and capitalization
+const arr1 = ["a", "a", "a"];
+const expected1 = {
+  a: 3,
+};
+
+const arr2 = ["a", "b", "a", "c", "B", "c", "c", "d"];
+const expected2 = {
+  a: 2,
+  b: 1,
+  c: 3,
+  B: 1,
+  d: 1,
+};
+
+const arr3 = [];
+const expected3 = {};
+
+/**
+ * Builds a frequency table based on the given array.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {Array<string>} arr
+ * @returns {Object<string, number>} A frequency table where the keys are items
+ *    from the given arr and the values are the amnt of times that item occurs.
  */
-
-  const str1 = "a x a";
-  const expected1 = true;
-  
-  const str2 = "racecar";
-  const expected2 = true;
-  
-  const str3 = "Dud";
-  const expected3 = false;
-  
-  const str4 = "oho!";
-  const expected4 = false;
-  
-  /**
-   * Determines if the given str is a palindrome (same forwards and backwards).
-   * - Time: O(?).
-   * - Space: O(?).
-   * @param {string} str
-   * @returns {boolean} Whether the given str is a palindrome or not.
-   */
-  function isPalindrome(str) {
-    var newString = str.split('').reverse().join("");
-    var secondString = str.split('');
-    // var re = str.split('');
-
-    // console.log(newString);
-
-    //var reverseString = newString.reverse();
-
-    var is_palindrome = true;
-
-     console.log(str);
-     console.log(newString);
-
-    if (str === newString) {
-      console.log (is_palindrome);
-    }
-
-    else {
-      console.log(is_palindrome = false);
-    }
-  }
-
-  isPalindrome(str1);
-  isPalindrome(str2);
-  isPalindrome(str3);
-  isPalindrome(str4);
+function makeFrequencyTable(arr) {}
