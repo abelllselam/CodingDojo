@@ -1,34 +1,40 @@
 //
 
-// // 08/07/2023
-// /*
-//   Given an array of strings
-//   return the number of times each string occurs (a frequency / hash table)
-// */
+// 08/08/2023
+/* 
+  Given a string containing space separated words
+  Reverse each word in the string.
 
-const arr1 = ["a", "a", "a"];
-const expected1 = {
-  a: 3,
-};
+  If you need to, use .split to start, then try to do it without.
+*/
 
-const arr2 = ["a", "b", "a", "c", "B", "c", "c", "d"];
-const expected2 = {
-  a: 2,
-  b: 1,
-  c: 3,
-  B: 1,
-  d: 1,
-};
+const str1 = "hello";
+const expected1 = "olleh";
 
-const arr3 = [];
-const expected3 = {};
+const str2 = "hello world";
+const expected2 = "olleh dlrow";
+
+const str3 = "abc def ghi";
+const expected3 = "cba fed ihg";
 
 /**
- * Builds a frequency table based on the given array.
+ * Reverses the letters in each words in the given space separated
+ * string of words. Does NOT reverse the order of the words themselves.
  * - Time: O(?).
  * - Space: O(?).
- * @param {Array<string>} arr
- * @returns {Object<string, number>} A frequency table where the keys are items
- *    from the given arr and the values are the amnt of times that item occurs.
+ * @param {string} str Contains space separated words.
+ * @returns {string} The given string with each word's letters reversed.
  */
-function makeFrequencyTable(arr) {}
+function reverseWords(str) {
+  var newString = "";
+
+  newString = str.split("").reverse().join("");
+  // newString = str.
+  // console.log(newString);
+
+  return newString;
+}
+
+console.log(reverseWords(str1));
+console.log(reverseWords(str2));
+console.log(reverseWords(str3));
