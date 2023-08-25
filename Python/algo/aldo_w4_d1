@@ -70,8 +70,6 @@ const expected7 = 1;
 const nums8 = [];
 const expected8 = 0;
 
-// The second algo of the day
-
 /**
  * Add params if needed for recursion
  * Recursively sums the given array.
