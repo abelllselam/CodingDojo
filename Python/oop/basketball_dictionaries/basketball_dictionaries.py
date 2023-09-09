@@ -92,11 +92,9 @@ players = [
 
 
 # Challenge 3: Make a list of Player instances from a list of dictionaries
-class Player:
-    new_team = []
+new_team = []
 
-    def __init__(self, players):
-        self.name = players["name"]
-        self.age = players["age"]
-        self.position = players["position"]
-        self.team = players["team"]
+for player in players:
+    new_team.append(player)
+
+print(new_team)
