@@ -30,6 +30,26 @@ const expected4 = [42, 0, 6];
  * @param {Array<any>} arr2
  * @returns {Array<any>} A new array of interleaved items.
  */
-function interleaveArrays(arr1, arr2) {}
 
-/*****************************************************************************/
+function interleaveArrays(arr1, arr2) {
+  const newArr = [];
+
+  // Calculate the maximum length between arr1 and arr2
+  const longest = Math.max(arr1.length, arr2.length);
+
+  for (let i = 0; i < longest; i++) {
+    if (i < arr1.length) {
+      newArr.push(arr1[i]);
+    }
+    if (i < arr2.length) {
+      newArr.push(arr2[i]);
+    }
+  }
+
+  return newArr;
+}
+
+console.log(interleaveArrays(arrA1, arrB1), "expected:", expected1);
+console.log(interleaveArrays(arrA2, arrB2), "expected:", expected2);
+console.log(interleaveArrays(arrA3, arrB3), "expected:", expected3);
+console.log(interleaveArrays(arrA4, arrB4), "expected:", expected4);

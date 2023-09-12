@@ -30,6 +30,26 @@ const expected5 = null;
  * @returns {number|null} The first int value from the given array that has no
  *    dupes or null if there is none.
  */
-function firstNonRepeated(nums) {}
+function firstNonRepeated(nums) {
+  for (const num of nums) {
+    count[num] = (count[num] || 0) + 1;
+  }
+
+  // Find the first non-repeated integer
+  for (const num of nums) {
+    if (counts[num] === 1) {
+      return num;
+    }
+  }
+
+  // If no non-repeated integer is found, return null
+  return null;
+}
+
+console.log(firstNonRepeated(nums1), "expected: ", expected1);
+console.log(firstNonRepeated(nums2), "expected: ", expected2);
+console.log(firstNonRepeated(nums3), "expected: ", expected3);
+console.log(firstNonRepeated(nums4), "expected: ", expected4);
+console.log(firstNonRepeated(nums5), "expected: ", expected5);
 
 /*****************************************************************************/

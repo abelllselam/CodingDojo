@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import math
+
 
 app = Flask(__name__)
 
@@ -16,11 +16,8 @@ def second():
 
 @app.route("/<int:x>/<int:y>")
 def x_and_y(x, y):
-    num_x = x - (x / 2)
-    math.floor(int(num_x))
-    print(num_x)
-    num_y = y - (y / 2)
-    math.floor(num_y)
+    num_x = x - int(x / 2)
+    num_y = y - int(y / 2)
 
     return render_template("x_and_y.html", x=x, y=y, num_x=num_x, num_y=num_y)
 
