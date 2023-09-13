@@ -31,19 +31,19 @@ const expected5 = null;
  *    dupes or null if there is none.
  */
 function firstNonRepeated(nums) {
-  for (const num of nums) {
-    count[num] = (count[num] || 0) + 1;
-  }
-
-  // Find the first non-repeated integer
-  for (const num of nums) {
-    if (counts[num] === 1) {
-      return num;
+  let newArr = [];
+  // go to the array
+  // for loop
+  for (let i = 0; i < nums.length; i++) {
+    // console.log(nums[i]);
+    // const nums1 = [3, 5, 4, 3, 4, 6, 5, 7];
+    for (let j = 0; j < nums.length; j++) {
+      if (nums[i] == nums[j]) {
+        newArr.push(nums[j]);
+      }
     }
   }
-
-  // If no non-repeated integer is found, return null
-  return null;
+  return newArr;
 }
 
 console.log(firstNonRepeated(nums1), "expected: ", expected1);
