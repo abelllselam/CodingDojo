@@ -11,29 +11,80 @@
     />
     <title>Dojo Survey</title>
   </head>
-  <body style="background-color: aqua; margin: 200px 300px">
-    <div class="card border border-dark m-5 border border-4 rounded-2 col-6">
-      <div class="card-body" style="background-color: gray">
-        <form class="row gx-3 gy-2 align-items-center">
-          <div class="col d-flex">
-            <label for="specificSizeInputName" class="col-2">Name:</label>
-            <input
-              type="text"
-              class="form-control col-2"
-              id="specificSizeInputName"
-              style="width: 300px"
-            />
-          </div>
-          <div class="col d-flex">
-            <label for="specificSizeInputName" class="col-2"
-              >Dojo Location:</label
+  <body class="w-100">
+    <div
+      class="card border-dark w-50 mx-auto mt-5"
+      style="height: 400px; box-shadow: 5px 5px black"
+    >
+      <div
+        class="card-body"
+        style="background-color: grey; border: 2px solid black; color: white"
+      >
+        <form action="/process" method="POST" style="color: white">
+          <div class="mb-3 d-flex gap-5">
+            <label
+              for="name"
+              class="form-label"
+              style="margin-top: 2px; display: inline-block; width: 150px"
+              >Name:</label
             >
             <input
+              name="name"
               type="text"
-              class="form-control col-2"
-              id="specificSizeInputName"
-              style="width: 300px"
+              class="form-control border-dark w-50 flex-column"
+              id="name"
+              aria-describedby="emailHelp"
             />
+          </div>
+          <div class="mb-3 d-flex gap-5">
+            <label
+              for="location"
+              class="form-label"
+              style="margin-top: 2px; display: inline-block; width: 150px"
+              >Dojo Location:</label
+            >
+            <select
+              name="location"
+              class="form-select w-50 border-dark flex-column"
+            >
+              <option selected>San Jose</option>
+              <option value="1">Chicago</option>
+              <option value="2">Online</option>
+              <option value="3">New York</option>
+            </select>
+          </div>
+          <div class="mb-3 d-flex gap-5">
+            <label
+              for="language"
+              class="form-label"
+              style="margin-top: 2px; display: inline-block; width: 150px"
+              >Favorite Language:</label
+            >
+            <select name="language" class="form-select w-50 border-dark">
+              <option selected>Python</option>
+              <option value="1">JavaScript</option>
+              <option value="2">Java</option>
+              <option value="3">C#</option>
+            </select>
+          </div>
+          <div class="mb-3 d-flex gap-5">
+            <label
+              for="comment"
+              class="form-label"
+              style="margin-top: 2px; display: inline-block; width: 150px"
+              >Comment (optional):</label
+            >
+            <textarea
+              name="comment"
+              class="form-control w-50 border-dark"
+              placeholder="Leave a comment here"
+              id="comment"
+            ></textarea>
+          </div>
+          <div class="text-end" style="margin-right: 55px">
+            <button name="submit" id="submit" class="btn btn-primary">
+              Submit
+            </button>
           </div>
         </form>
       </div>
