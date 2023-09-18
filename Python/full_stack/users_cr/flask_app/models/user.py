@@ -1,5 +1,5 @@
 # a function to return the instance of the function
-from mysqlconnection import connectToMySQL
+from flask_app.config.mysqlconnection import connectToMySQL
 
 DB = "users_schema"
 
@@ -27,6 +27,31 @@ class User:
         return users
 
     @classmethod
+    def read_one(cls, user_id):
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+
+        data = {"id": user_id}
+
+        results = connectToMySQL(DB).query_db(query, data)
+
+        return cls(results[0])
+
+    @classmethod
+    def update(cls, data):
+        query = """
+                UPDATE users
+                SET first_name = %(first_name)s, last_name = %(last_name)s, email = %(email)s
+                WHERE id = %(id)s
+        """
+
+        results = connectToMySQL(DB).query_db(query, data)
+
+        return results
+
+    # @classmethod
+    # def delete (cls, )
+
+    @classmethod
     def save(cls, data):
         query = """
                 INSERT INTO users (first_name, last_name, email)
@@ -35,3 +60,8 @@ class User:
         results = connectToMySQL(DB).query_db(query, data)
 
         return results
+
+    @classmethod
+    def destroy(cls, data):
+        query = "DELETE FROM users WHERE id = %(id)s;"
+        return connectToMySQL("users_schema").query_db(query, data)
