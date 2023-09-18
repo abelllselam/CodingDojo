@@ -4,6 +4,8 @@ from mysqlconnection import connectToMySQL
 
 # model the class after the friend table from our database
 class Friend:
+    DB = "first_flask"
+
     def __init__(self, data):
         self.id = data["id"]
         self.first_name = data["first_name"]
@@ -24,3 +26,28 @@ class Friend:
         for friend in results:
             friends.append(cls(friend))
         return friends
+
+    @classmethod
+    def save(cls, data):
+        query = """
+                INSERT INTO friends ( first_name , last_name , occupation) 
+                VALUES ( %(fname)s , %(lname)s , %(occ)s);
+        """
+        # data is a dictionary that will be passed into the save method from server.py
+        return connectToMySQL(cls.DB).query_db(query, data)
+
+    @classmethod
+    def update(cls, data):
+        query = """
+                UPDATE friends
+                SET first_name = %(first_name)s,last_name= %(last_name)s,email %(email)s, occupation = %(occupation)s
+                WHERE id = %(id)s
+        """
+
+        return connectToMySQL(cls.DB).query_db(query, data)
+
+    @classmethod
+    def delete(cls, friend_id):
+        query = "DELETE FROM friends WHERE id = %(id)s;"
+        data = {"id": friend_id}
+        return connectToMySQL(cls.DB).query_db(query, data)
