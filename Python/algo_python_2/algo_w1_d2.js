@@ -1,4 +1,41 @@
 /* 
+  String: Reverse
+
+  Given a string,
+  return a new string that is the given string reversed
+*/
+
+const str1 = "creature";
+const expected1 = "erutaerc";
+
+const str2 = "dog";
+const expected2 = "god";
+
+const str3 = "hello";
+const expected3 = "olleh";
+
+const str4 = "";
+const expected4 = "";
+
+/**
+ * Reverses the given str.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {string} str String to be reversed.
+ * @returns {string} The given str reversed.
+ *
+ * step 1: create an empty string variable
+ * step 2: start at the back of the string
+ * step 3: make a loop and loop to the front
+ * step 4: add it to a new string
+ * ** finish the loop
+ * step 5: return the new string
+ */
+function reverseString(str) {}
+
+/*****************************************************************************/
+
+/* 
   Acronyms
 
   Create a function that, given a string, returns the string’s acronym 
@@ -7,53 +44,25 @@
   Do it with .split first if you need to, then try to do it without
 */
 
-const str1 = "object oriented programming";
-const expected1 = "OOP";
+const two_str1 = "object oriented programming";
+const two_expected1 = "OOP";
 
 // The 4 pillars of OOP
-const str2 = "abstraction polymorphism inheritance encapsulation";
-const expected2 = "APIE";
+const two_str2 = "abstraction polymorphism inheritance encapsulation";
+const two_expected2 = "APIE";
 
-const str3 = "software development life cycle";
-const expected3 = "SDLC";
+const two_str3 = "software development life cycle";
+const two_expected3 = "SDLC";
 
 // Bonus: ignore extra spaces
-const str4 = "  global   information tracker    ";
-const expected4 = "GIT";
+const two_str4 = "  global   information tracker    ";
+const two_expected4 = "GIT";
 
 /**
  * Turns the given str into an acronym.
  * - Time: O(?).
  * - Space: O(?).
- * @param {String} str A string to be turned into an acronym.
- * @returns {String} The acronym.
+ * @param {string} wordsStr A string to be turned into an acronym.
+ * @returns {string} The acronym.
  */
-function acronymize(str) {
-  str = str.trim();
-  let acronym = "";
-
-  for (let char = 0; char < str.length; char++) {
-    let acronym = "";
-    const wordsArr = str.split(" ");
-
-    for (const word of wordsArr) {
-      if (word !== "") {
-        acronym += word[0].toUpperCase();
-      }
-    }
-    return acronym;
-  }
-  return acronym;
-}
-
-const result1 = acronymize(str1);
-console.log(result1, "expected: ", expected1);
-
-const result2 = acronymize(str2);
-console.log(result2, "expected: ", expected2);
-
-const result3 = acronymize(str3);
-console.log(result3, "expected: ", expected3);
-
-const result4 = acronymize(str4);
-console.log(result4, "expected: ", expected4);
+function acronymize(str) {}
