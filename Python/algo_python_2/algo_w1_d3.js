@@ -87,6 +87,12 @@ const expected2 = "aaabbccccccccccccdddddddddd";
  *    after indicating how many times the character occurs.
  * @returns {string} The given str decoded / expanded.
  */
+/**
+ * The `decodeStr` function takes a string as input and decodes it by repeating each character a
+ * certain number of times based on the digits that follow it.
+ * @param str - The parameter `str` is a string that represents an encoded string.
+ * @returns The code is returning the decoded string.
+ */
 function decodeStr(str) {
   let decoded = "";
   let currentChar = "";
