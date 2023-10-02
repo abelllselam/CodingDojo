@@ -33,7 +33,7 @@ class Ninja:
         self,
         first_name,
         last_name,
-        pet,
+        pet=Pet("dog", "small", "play dead", 100, 100),
         treats="nice food",
         pet_food="the best pet food",
     ):
@@ -59,8 +59,8 @@ class Ninja:
         return self
 
 
-ninja_pet = Pet("dog", "small", "play dead", 100, 100)
+# ninja_pet = Pet("dog", "small", "play dead", 100, 100) it works like this too! instead of calling the class in the constructor of the Ninja class
 
-ninja = Ninja("john", "Doe", ninja_pet)
+ninja = Ninja("john", "Doe")
 
 print(ninja.feed())
