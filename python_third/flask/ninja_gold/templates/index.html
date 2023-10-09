@@ -96,11 +96,13 @@
           margin-left: 50px;
         "
       >
-        {% if message %} {% if total < 0 %}
-        <p style="margin-left: 10px; color: red">{{message}}</p>
-        {% elif total > 0 %}
-        <p style="margin-left: 10px; color: green">{{message}}</p>
-        {% endif %} {% endif %}
+        {% for item in message %} {% if item.startswith('Earned') %}
+        <p style="color: green">{{item}}</p>
+        {% elif item.startswith('Entered') and gold < 0 %}
+        <p style="color: red">{{item}}</p>
+        {% else %}
+        <p style="color: green">{{item}}</p>
+        {% endif %} {% endfor %}
       </div>
     </div>
     <a href="/reset">

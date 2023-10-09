@@ -9,7 +9,7 @@ app.secret_key = "this is a secret key"
 @app.route("/")
 def index():
     if "message" not in session:
-        session["message"] = None
+        session["message"] = []
         session["gold"] = 0
     if "total" not in session:
         session["total"] = 0
@@ -22,7 +22,10 @@ def index():
     )
 
     return render_template(
-        "index.html", message=session["message"], total=session["total"]
+        "index.html",
+        message=session["message"],
+        total=session["total"],
+        gold=session["gold"],
     )
 
 
@@ -44,9 +47,9 @@ def process_form():
         if session["gold"] < 0:
             message = f"Entered a casino and lost {session['gold']} golds ....ouch {current_time}"
         else:
-            message = f"Entered a casino and won {session['gold']} golds {current_time}"
+            message = f"Earned gold and won {session['gold']} golds {current_time}"
 
-    session["message"] = message
+    session["message"].append(message)
     session["total"] = session["total"] + session["gold"]
 
     print(
