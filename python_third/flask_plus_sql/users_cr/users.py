@@ -27,10 +27,10 @@ class User:
         # expecting an id number after the user is created
         results = connectToMySQL(DATABASE).query_db(query, data)
 
-        print(
-            "This is the save class method printing the results query output ----------->",
-            results,
-        )
+        # print(
+        #     "This is the save class method printing the results query output ----------->",
+        #     results,
+        # )
 
         return results
 
@@ -46,10 +46,10 @@ class User:
         # we are expecting a list of dictionaries
         results = connectToMySQL(DATABASE).query_db(query)
 
-        print(
-            "This is the get all class method printing the results query output ----------->",
-            results,
-        )
+        # print(
+        #     "This is the get all class method printing the results query output ----------->",
+        #     results,
+        # )
 
         users = []
 
@@ -57,3 +57,48 @@ class User:
             users.append(cls(user))
 
         return users
+
+    # read
+    @classmethod
+    def get_one(cls, id):
+        # this is the query to get one
+        # print(
+        #     "This is the user_id being printed in the get_one class method: --------->",
+        #     id,
+        # )
+        query = """
+                SELECT * from users
+                where id = %(id)s
+        """
+        data = {"id": id}
+        results = connectToMySQL(DATABASE).query_db(query, data)
+
+        one_user = cls(results[0])
+
+        # print("This is one user being printer in the update route: -------->", one_user)
+
+        return one_user
+
+    # Update
+    @classmethod
+    def update(cls, data):
+        print("printing the value of data in the model: ---->", data)
+        # query to update
+        query = """
+                UPDATE users
+                SET first_name = %(first_name)s,last_name=%(last_name)s,email = %(email)s
+                WHERE id = %(id)s;
+        """
+
+        results = connectToMySQL(DATABASE).query_db(query, data)
+
+        print("results in the update model to see what it prints:--->", results)
+
+        return results
+
+    # delete
+    @classmethod
+    def delete(cls, id):
+        query = "DELETE from users where id = %(id)s;"
+        data = {"id": id}
+        results = connectToMySQL(DATABASE).query_db(query, data)
