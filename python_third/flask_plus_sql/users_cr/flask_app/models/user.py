@@ -1,6 +1,7 @@
-from mysqlconnection import connectToMySQL
+from flask_app.config.mysqlconnection import connectToMySQL
 
 # assigning the database to DATABASE so that we dont have to user the actual database to avoid error
+
 DATABASE = "users_CR"
 
 
