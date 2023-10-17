@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <body style="border: 2px solid black; width: 1000px; min-height: 550">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; margin: 20px">
+        <h3>Welcome {{all_users.first_name}} {{all_users.last_name}}!!!</h3>
+        <a style="margin-top: 20px" href="/creation/new">Add Your Art</a>
+        <a style="margin-top: 20px" href="/reset"><button>Logout</button></a>
+      </div>
+      <div style="display: flex; justify-content: space-evenly; margin: 20px">
+        <h5>All Art Creations</h5>
+        <h5 style="margin-top: 20px" href="/">Your Purchased Creations</h5>
+      </div>
+      <div
+        style="
+          border: 2px solid black;
+          width: 300px;
+          min-height: 300px;
+          margin: 20px;
+        "
+        class="left_side"
+      >
+        {% for user in all_users %}
+        <p style="margin: 10px">
+          {% if user.title != None %}<a href="/pass_to_art_creations/{{user['arts.id']}}">
+            <p>
+              {{user.title}}  </a> by {{user.first_name}}
+              {{user.last_name}}
+              <a href="/delete/{{user['arts.id']}}">delete</a> |
+              <a href="/update/{{user['arts.id']}}">edit</a>
+            </p> {% endif %}
+        </p>
+
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
