@@ -1,11 +1,12 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
+from flask_app.models import sasquatch
 
 import re
 
 EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$")
 
-DB = "py_belt_exam"
+DB = "py_belt_exam_2"
 
 
 class User:
@@ -17,7 +18,7 @@ class User:
         self.password = data["password"]
         self.created_at = data["created_at"]
         self.updated_at = data["updated_at"]
-        self.arts = []
+        self.sasquatchs = []
 
     # CRUD
     # Create a new user:
@@ -101,13 +102,44 @@ class User:
         results = connectToMySQL(DB).query_db(query)
         return results
 
+    # GETS ALL USERS AND ALL THEIR sasquatchs
+    @classmethod
+    def all_users_with_all_sasquatchs(cls):
+        query = """
+                SELECT * FROM users
+                LEFT JOIN sasquatchs ON users.id = sasquatchs.user_id;
+        """
+        results = connectToMySQL(DB).query_db(query)
+
+        list_users = []
+
+        for row_from_db in results:
+            sasquatch_data = {
+                "id": row_from_db["sasquatchs.id"],
+                "location": row_from_db["location"],
+                "date_of_sighting": row_from_db["date_of_sighting"],
+                "number_of_sasquatch": row_from_db["number_of_sasquatch"],
+                "what_happened": row_from_db["what_happened"],
+                "created_at": row_from_db["sasquatchs.created_at"],
+                "updated_at": row_from_db["sasquatchs.updated_at"],
+                "user_id": row_from_db["user_id"],
+            }
+
+            user_instance = cls(row_from_db)
+            sasquatch_instance = sasquatch.Sasquatch(sasquatch_data)
+
+            user_instance.sasquatch = sasquatch_instance
+            list_users.append(user_instance)
+
+        return list_users
+
     # GETS ONE USERS AND ALL THEIR PAINTINGS
     @classmethod
     def one_to_many(cls, id):
         # query to join the tables
         query = """
                 SELECT * FROM users
-                LEFT JOIN arts ON users.id = arts.user_id 
+                LEFT JOIN sasquatchs ON users.id = sasquatchs.user_id 
                 WHERE users.id = %(id)s;
         """
 
@@ -117,23 +149,24 @@ class User:
 
         if not results:
             print("no user in the database-------->", results)
+            return []
 
-        print("This is the user from onetomany ----->", results)
+        # print("This is the user from onetomany ----->", results)
         # DOING THIS BEACUSE WE ARE DEALING WITH JUST ONE USER
         user = cls(results[0])
 
         for row_from_db in results:
-            art_data = {
-                "id": row_from_db["arts.id"],
-                "title": row_from_db["title"],
-                "description": row_from_db["description"],
-                "price": row_from_db["price"],
-                "quantity": row_from_db["quantity"],
-                "created_at": row_from_db["arts.created_at"],
-                "updated_at": row_from_db["arts.updated_at"],
+            sasquatch_data = {
+                "id": row_from_db["sasquatchs.id"],
+                "location": row_from_db["location"],
+                "date_of_sighting": row_from_db["date_of_sighting"],
+                "number_of_sasquatch": row_from_db["number_of_sasquatch"],
+                "what_happened": row_from_db["what_happened"],
+                "created_at": row_from_db["sasquatchs.created_at"],
+                "updated_at": row_from_db["sasquatchs.updated_at"],
                 "user_id": row_from_db["user_id"],
             }
 
-            # user.arts.append(Art(art_data))
+            user.sasquatchs.append(sasquatch.Sasquatch(sasquatch_data))
 
         return user

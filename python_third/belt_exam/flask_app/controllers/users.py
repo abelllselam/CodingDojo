@@ -23,7 +23,7 @@ def reg_process():
         return redirect("/")
 
     pw_hash = bcrypt.generate_password_hash(request.form["password"])
-    print(pw_hash)
+    # print(pw_hash)
     # put the pw_hash into the data dictionary
     data = {
         "first_name": request.form["first_name"],
@@ -34,7 +34,7 @@ def reg_process():
     # Call the save @classmethod on User
     user_id = User.save(data)
 
-    print("printing request.form", request.form)
+    # print("printing request.form", request.form)
     # user.User.save(request.form)
 
     # store user id into session
@@ -75,13 +75,19 @@ def dashboard():
     if "user_id" not in session:
         return redirect("/")
 
-    # id = session["user_id"]
+    id = session["user_id"]
 
     print("---------------->", id)
 
-    all_users = User.all_users_with_all_paints()
+    all_users = User.all_users_with_all_sasquatchs()
+    one_user = User.one_to_many(id)
 
-    print("printing all users ------>", all_users)
-    # all_arts = User.get_all()
+    # print("printing all users ------>", all_users)
 
-    return render_template("dashboard.html", all_users=all_users)
+    return render_template("dashboard.html", all_users=all_users, one_user=one_user)
+
+
+@app.route("/reset")
+def reset_page():
+    session.clear()
+    return redirect("/")

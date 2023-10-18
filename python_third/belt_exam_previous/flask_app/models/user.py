@@ -143,7 +143,28 @@ class User:
                 LEFT JOIN arts ON users.id = arts.user_id;
         """
         results = connectToMySQL(DB).query_db(query)
-        return results
+
+        list_users = []
+
+        for row_from_db in results:
+            art_data = {
+                "id": row_from_db["arts.id"],
+                "title": row_from_db["title"],
+                "description": row_from_db["description"],
+                "price": row_from_db["price"],
+                "quantity": row_from_db["quantity"],
+                "created_at": row_from_db["arts.created_at"],
+                "updated_at": row_from_db["arts.updated_at"],
+                "user_id": row_from_db["user_id"],
+            }
+
+            user_instance = cls(row_from_db)
+            art_instance = Art(art_data)
+
+            user_instance.art = art_instance
+            list_users.append(user_instance)
+
+        return list_users
 
     # GETS ONE USERS AND ALL THEIR PAINTINGS
     @classmethod
@@ -161,6 +182,7 @@ class User:
 
         if not results:
             print("no user in the database-------->", results)
+            return []
 
         print("This is the user from onetomany ----->", results)
         # DOING THIS BEACUSE WE ARE DEALING WITH JUST ONE USER

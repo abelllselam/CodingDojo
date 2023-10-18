@@ -1,6 +1,7 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 
-# from flask_app.models.user import User
+from flask_app.models import user
+
 from flask_app.controllers import users
 
 DB = "py_belt_exam"
@@ -16,6 +17,7 @@ class Art:
         self.created_at = data["created_at"]
         self.updated_at = data["updated_at"]
         self.user_id = data["user_id"]
+        self.users = []
 
     # CRUD
     # Read_by_id
@@ -51,6 +53,45 @@ class Art:
         results = connectToMySQL(DB).query_db(query, data)
 
         return results
+
+    # GETS ONE USERS AND ALL THEIR PAINTINGS
+    @classmethod
+    def one_to_many_all_art_with_user(cls, id):
+        # query to join the tables
+        query = """
+                SELECT * FROM arts
+                JOIN users ON users.id = arts.user_id 
+                WHERE arts.id = %(id)s;
+        """
+
+        data = {"id": id}
+
+        results = connectToMySQL(DB).query_db(query, data)
+
+        if not results:
+            print("no user in the database-------->", results)
+            return []
+
+        one_user = []
+
+        for row_from_db in results:
+            user_data = {
+                "id": row_from_db["users.id"],
+                "first_name": row_from_db["first_name"],
+                "last_name": row_from_db["last_name"],
+                "email": row_from_db["email"],
+                "password": row_from_db["password"],
+                "created_at": row_from_db["created_at"],
+                "updated_at": row_from_db["updated_at"],
+            }
+
+            art_instance = cls(row_from_db)
+            user_instance = user.User(user_data)
+
+            art_instance.user = user_instance
+            one_user.append(art_instance)
+
+        return one_user
 
     # This is to update the art information in the arts DB
     @classmethod

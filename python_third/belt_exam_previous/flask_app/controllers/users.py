@@ -77,16 +77,16 @@ def dashboard():
     if "user_id" not in session:
         return redirect("/")
 
-    # id = session["user_id"]
+    id = session["user_id"]
 
     print("---------------->", id)
 
     all_users = User.all_users_with_all_paints()
-
+    one_user = User.one_to_many(id)
     print("printing all users ------>", all_users)
     # all_arts = User.get_all()
 
-    return render_template("dashboard.html", all_users=all_users)
+    return render_template("dashboard.html", all_users=all_users, one_user=one_user)
 
 
 @app.route("/pass_to_art_creations/<int:id>")

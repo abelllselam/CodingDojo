@@ -1,5 +1,5 @@
 from flask_app import app
-from flask import Flask, render_template, redirect, request, flash
+from flask import Flask, render_template, redirect, request, flash, session
 from flask_app.controllers import users
 from flask_app.models.art import Art
 from flask_app.models.user import User
@@ -9,11 +9,14 @@ from flask_app.models.user import User
 @app.route("/creation/<int:id>")
 def display_and_buy(id):
     one_art = Art.read_by_id(id)
+    one_user = Art.one_to_many_all_art_with_user(id)
+
+    print(one_user, "_------------oneuser being printed")
 
     print("This is the one art print to see if it prints the user_id: ------>", one_art)
     # one_to_many = User.one_to_many(id)
 
-    return render_template("creations.html", one_art=one_art)
+    return render_template("creations.html", one_art=one_art, one_user=one_user)
 
 
 # the form data from the new art
@@ -42,6 +45,9 @@ def create():
 @app.route("/creations/<int:id>/edit")
 def update_art(id):
     art_info = Art.read_by_id(id)
+
+    session["art_id"] = id
+
     print(
         "This is the update controller printing read by id info:------>",
         id,
@@ -57,6 +63,9 @@ def edit():
     #     request.form,
     # )
     Art.update_art(request.form)
+
+    if not User.Validate_art(request.form):
+        return redirect(f"/creations/{session['art_id']}/edit")
 
     return redirect("/users/dashboard")
 

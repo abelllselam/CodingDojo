@@ -30,6 +30,14 @@
       </div>
       <div style="margin: 20px">
         <form action="/update/art" method="post">
+          {% with messages = get_flashed_messages(category_filter = ["art"]) %}
+          {% if messages %}
+          <ul class="flashes">
+            {% for message in messages %}
+            <li style="color: red">{{ message }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %} {% endwith %}
           <input type="hidden" name="id" value="{{art_info.id}}" />
           <div>
             <label for="title">Title:</label>

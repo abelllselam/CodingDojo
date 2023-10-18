@@ -21,7 +21,9 @@
     </div>
     <div style="margin: 20px">
       <form action="" method="post">
-        <h5>Created by</h5>
+        {% for user in one_user %}
+        <h5>Created by {{user.user.first_name}}</h5>
+        {% endfor %}
         <p>Price: {{one_art.price}}</p>
         <p>Number in stock: {{one_art.quantity}}</p>
         <p>Description: {{one_art.description}}</p>
