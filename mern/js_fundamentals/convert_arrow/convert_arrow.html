@@ -50,6 +50,12 @@
       document.getElementById("hover-this").onmouseout = () => {
         setBackgroundColorById("body", "white");
       };
+      document.getElementById("set-color").addEventListener("click", () => {
+        const colorInput = document.getElementById("color-input").value;
+        setBackgroundColorById("set-color", colorInput);
+        console.log(colorInput);
+      });
+
       const getValueFromId = (id) => {
         return document.getElementById(id).value;
       };
