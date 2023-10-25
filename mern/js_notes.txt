@@ -1,0 +1,8 @@
+How to start a react app
+- npx create-react-app  => in the folder i am working on
+- Do not name the react file the same name as the folder
+- the naming is lowercase and separated by - or _
+- Going forward we will always use developer tools => right click and inspect then console. Always have this open!
+
+After starting react this are the two files we care about are:
+- App.js and packages.json
